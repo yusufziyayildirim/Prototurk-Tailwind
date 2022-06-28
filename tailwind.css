@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components{
+    .sidebar{
+       @apply 
+       bg-white dark:bg-gray-900 scale-90 lg:scale-100 w-full lg:w-64 absolute lg:relative border-r p-2 inset-0 top-15 lg:top-0 opacity-0 lg:opacity-100 invisible lg:visible flex flex-col flex-shrink-0 border-gray-100 dark:border-gray-800 divide-solid divide-gray-100 dark:divide-gray-800 divide-y transition-all
+    }
+    .sidebar.active{
+        @apply
+        z-10 opacity-100 visible overflow-y-hidden scale-100
+    }
+    .nav-link{
+       @apply 
+       flex items-center rounded h-10 px-3 text-sm text-prototurk font-medium hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-800 transition-colors 
+    }
+    .nav-link.active{
+        @apply 
+        text-white bg-prototurk
+    }
+    .modal{
+        @apply 
+        fixed inset-0 bg-prototurk bg-opacity-60 flex items-center justify-center opacity-0 invisible transition-opacity z-50
+    }
+    .modal.active{
+        @apply 
+        visible opacity-100 z-30
+    }
+    .modal-content{
+        @apply 
+        bg-white p-10 max-w-full min-w-[600px] dark:bg-gray-900
+    }
+    .slider-item{
+        @apply  
+        border flex flex-col p-4 py-7 rounded items-center
+    }
+    .profile-dropdown{
+        @apply
+        text-sm flex h-7 items-center px-3 transition-colors rounded hover:bg-gray-200 dark:hover:bg-gray-800
+    }
+}

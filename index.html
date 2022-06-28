@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="body" class="bg-white h-full flex-col dark:bg-gray-900 dark:text-white overflow-x-hidden" style="overflow-y: scroll;">
+
+    <div class="h-15 border-b bg-inherit border-gray-100 dark:border-gray-700 w-full flex justify-between items-center px-4 lg:px-8 z-10">
+        <button onclick="sidebar()" class="lg:hidden text-prototurk">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" class="fill-current"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+        </button>
+        <a href="#" class="text-2xl font-medium text-prototurk dark:text-white">
+            ./Prototurk
+            <span class="text-sm text-gray-400 hidden lg:inline">v2.5.0</span>
+        </a>
+        <form action="" class="w-1/3 hidden lg:block">
+            <input type="text" placeholder="Makalelerde ara" class="w-full bg-gray-100 dark:bg-gray-700 h-10 px-3 placeholder-gray-500 dark:placeholder-gray-300 rounded">
+        </form>
+        <a onclick="modal('login-modal')" href="javascript:;" class="login-btn bg-prototurk inline-flex text-white h-10 items-center px-5 rounded"> 
+            Giriş Yap
+        </a>
+
+        <div class="group relative hidden" id="profile">
+            <button class="flex items-center h-10 px-3 rounded text-sm">
+                <img class="rounded-full" width="24" src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&w=1000&q=80" alt="">
+                <span class="hidden lg:inline ml-3">Yusuf Yıldırım</span>
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" class="fill-current"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M7 10l5 5 5-5H7z"/></svg>
+            </button>
+            <div tabindex="0" class="opacity-0 invisible absolute bg-gray-100 right-0 w-44 p-1 space-y-1 rounded group-focus-within:mt-1 group-focus-within:opacity-100 group-focus-within:visible transition-all dark:bg-prototurk">
+                <a href="" class="profile-dropdown">Profil</a>
+                <a href="" class="profile-dropdown">Profil Düzenle</a>
+                <a href="" class="profile-dropdown">Takipçiler</a>
+                <a href="" class="profile-dropdown">Sorular</a>
+                <a href="" class="profile-dropdown">Cevaplar</a>
+                <a href="" class="profile-dropdown">Çıkış Yap</a>
+            </div> 
+        </div>
+    </div>
+
+    <main class="flex flex-auto calc-h-full-15">
+        <aside class="sidebar">
+            <nav class="mb-3 space-y-1">
+                <a href="" class="nav-link active">
+                    Anasayfa
+                </a>
+                <a href=""  class="nav-link">
+                    Akış
+                </a>
+                <a href=""  class="nav-link">
+                    Keşfet
+                </a>
+                <a href=""  class="nav-link">
+                    Makaleler 
+                </a>
+                <a href=""  class="nav-link">
+                    Soru & Cevap
+                </a>
+            </nav>
+            <nav class="mt-3 pt-3">
+                <a href="" class="nav-link">
+                    HTML
+                </a>
+                <a href=""  class="nav-link">
+                    CSS
+                </a>
+                <a href=""  class="nav-link">
+                    JS
+                </a>
+                <a href=""  class="nav-link">
+                    PHP 
+                </a>
+                <a href=""  class="nav-link">
+                    MYSQL
+                </a>
+                <a href=""  class="nav-link">
+                    Laravel
+                </a>
+                <a href=""  class="nav-link">
+                    Python
+                </a>
+            </nav>
+            <div class="mt-auto pt-3">
+                <button onclick="darkmode()" class="bg-gray-900 dark:bg-white dark:text-gray-800 w-full h-10 rounded flex items-center text-white pl-4 hover:bg-gray-700 dark:hover:bg-gray-200 transition-colors">                 
+                    <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" class="fill-current mr-3">
+                        <rect fill="none" height="24" width="24"/> 
+                        <path d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/>
+                    </svg>
+                    <div class="hidden dark:inline">Açık Mod</div>
+                    <div class="inline dark:hidden">Koyu Mod</div>
+                </button>
+            </div>
+
+        </aside>
+        <section class="flex-auto py-6 px-5 lg:px-10">
+            <div class="mx-auto max-w-screen-xl">
+                <h2 class="text-3xl font-semibold mb-4 text-prototurk leading-relaxed dark:text-white">Kendine değer kat</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium harum soluta modi laudantium iste tempora?</p>
+                <div class="grid grid-cols-10 mt-4 mb-5 gap-3 lg:gap-7"> <!--flex overflow-x-auto lg:-->
+                    <div class="col-span-5 lg:col-span-2 ">
+                        <a href="" class="slider-item dark:border-gray-700  hover:!border-red-700">
+                            <span class="w-24 mb-2 h-24 border border-red-500 rounded-full grid place-items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="40px" viewBox="0 0 24 24" width="40px" class="fill-current text-red-500">
+                                    <rect fill="none" height="24" width="24"/> 
+                                    <path d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/>
+                                </svg>
+                            </span>
+                            <span class="rounded inline-flex h-8 px-3 text-white bg-red-500 items-center">
+                                HTML
+                            </span>
+                        </a>
+                    </div>
+                    <div class="col-span-5 lg:col-span-2">
+                        <a href="" class="slider-item dark:border-gray-700  hover:!border-blue-700">
+                            <span class="w-24 mb-2 h-24 border border-blue-500 rounded-full grid place-items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="40px" viewBox="0 0 24 24" width="40px" class="fill-current text-blue-500">
+                                    <rect fill="none" height="24" width="24"/> 
+                                    <path d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/>
+                                </svg>
+                            </span>
+                            <span class="rounded inline-flex h-8 px-3 text-white bg-blue-500 items-center">
+                                CSS
+                            </span>
+                        </a>
+                    </div>
+                    <div class="col-span-5 lg:col-span-2">
+                        <a href="" class="slider-item group dark:border-gray-700 hover:!border-yellow-700">
+                            <span class="w-24 mb-2 h-24 border border-yellow-500 rounded-full grid place-items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="40px" viewBox="0 0 24 24" width="40px" class="fill-current text-yellow-500">
+                                    <rect fill="none" height="24" width="24"/> 
+                                    <path d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/>
+                                </svg>
+                            </span>
+                            <span class="group-hover:bg-yellow-300 transition-colors rounded inline-flex h-8 px-3 text-white bg-yellow-500 items-center">
+                                JS
+                            </span>
+                        </a>
+                    </div>
+                    <div class="col-span-5 lg:col-span-2">
+                        <a href="" class="slider-item group dark:border-gray-700  hover:!border-purple-900">
+                            <span class="w-24 mb-2 h-24 border border-purple-700 rounded-full grid place-items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="40px" viewBox="0 0 24 24" width="40px" class="fill-current text-purple-700">
+                                    <rect fill="none" height="24" width="24"/> 
+                                    <path d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/>
+                                </svg>
+                            </span>
+                            <span class="group-hover:bg-purple-600 transition-colors rounded inline-flex h-8 px-3 text-white bg-purple-700 items-center">
+                                PHP
+                            </span>
+                        </a>
+                    </div>
+                    <div class="col-span-5 lg:col-span-2">
+                        <a href="" class="slider-item dark:border-gray-700  hover:!border-blue-900">
+                            <span class="w-24 mb-2 h-24 border border-blue-800 rounded-full grid place-items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="40px" viewBox="0 0 24 24" width="40px" class="fill-current text-blue-800">
+                                    <rect fill="none" height="24" width="24"/> 
+                                    <path d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/>
+                                </svg>
+                            </span>
+                            <span class="rounded inline-flex h-8 px-3 text-white bg-blue-800 items-center">
+                                MYSQL
+                            </span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-twitter p-7 rounded text-white flex flex-col lg:flex-row items-center">
+                    <div class="w-20 flex-shrink-0 pl-0 lg:pl-2 mb-4 lg:mb-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="50px" viewBox="0 0 24 24" width="50px" class="fill-current text-white">
+                            <rect fill="none" height="24" width="24"/> 
+                            <path d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h6 class="text-xl mb-1">Twitterdan <strong>Prototurk</strong> kanalını takip etmeyi unutma</h6>
+                        <p>Hazırladığımız son videolardan anında haberdar olmak için twitter hesabımızı takip etmeyi unutma</p>
+                        <a href="" class="bg-white h-11 px-5 inline-flex items-center rounded mt-4 text-black">Takip Et</a>
+                    </div>
+                  
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="modal" id="login-modal">
+        <div class="modal-content">
+            <h3 class="text-2xl mb-4">Giriş Yap</h3>
+            <button onclick="login()" class="bg-prototurk px-6 inline-flex items-center rounded h-10 text-white">
+               Giriş Yap
+            </button>
+            <button onclick="modal('login-modal')" class="bg-prototurk px-6 inline-flex items-center rounded h-10 text-white">
+               Kapat
+            </button>
+        </div>
+    </div>
+
+    <script>
+        if(localStorage.getItem('dark')){
+            document.documentElement.classList.toggle('dark');
+        }
+
+        function darkmode(){
+            document.documentElement.classList.toggle("dark");
+            if(document.documentElement.classList.contains('dark')){
+                localStorage.setItem('dark','true');
+            }else{
+                localStorage.removeItem('dark');
+            }
+        }
+
+        function sidebar(){
+            document.querySelector('.sidebar').classList.toggle("active");
+            var bodyScroll = document.getElementById("body").style.overflowY;
+            document.getElementById("body").style.overflowY = bodyScroll === 'scroll' ? 'hidden' : 'scroll';
+        }
+
+        function modal(id){
+            document.getElementById(id).classList.toggle('active');
+        }
+
+        function login(){
+            document.getElementById('profile').style.display = 'block';
+            document.querySelector('.login-btn').style.display = 'none';
+            document.getElementById('login-modal').classList.toggle('active');
+        }
+    </script>
+ 
+</body>
+</html>
